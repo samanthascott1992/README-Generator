@@ -1,25 +1,33 @@
 
 #Project Title
-README generator
+---------------
+README Generator
 
 
 
 ##Description
-this is awesome
+---------------
+This product is intended to assist in the generation of README.md files for current and future projects. 
 
 
-###GitHub Username:
-sam
-# 
+###GitHub Username
+------------------
+samanthascott1992
+
 #Project Repo URL
- aiwesjufh\b
+-------------------
+ https://github.com/samanthascott1992/README-Generator.git
 
-#Intended Use for Product
- to generate README.md files for future projects
+##Intended Use for Product
+--------------------------
+ generating README files
 
 
-# MIT
+#Which type of license do you wish to use?
+----------------------------
+MIT
 
 #What command do you use to install?
+------------------------
  npm i
 
