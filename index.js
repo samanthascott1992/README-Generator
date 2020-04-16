@@ -1,48 +1,23 @@
-// const questions = [
-
-// ];
-
-// function writeToFile(fileName, data) {
-// }
-
-// function init() {
-
-// }
-
-// init();
-
-// // Activity 06
-
-// var fs = require("fs");
-
-// fs.writeFile("log.txt", process.argv[2], function(err) {
-
-//   if (err) {
-//     return console.log(err);
-//   }
-
-//   console.log("Success!");
-
-// });
-
-
 
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
+const generateMarkdown = require("./utils/generateMarkdown");
 
-const writeFileAsync = util.promisify(fs.writeFile);
-
-function promptUser() {
-  return inquirer.prompt([
-        {
+const questions = [
+    {
         type: "input",
         name: "github",
         message: "Enter your GitHub Username"
         },
         {
+         type: "input",
+        name: "title",
+         message: "What is the title of your project?"
+        },
+        {
         type: "input",
-        name: "project-url",
+        name: "projectUrl",
         message: "Enter your project URL."
         },
         {
@@ -57,33 +32,40 @@ function promptUser() {
         },   
        {
         type: "input",
-        name: "FIX ME",
+        name: "FIXME",
         message: "What kind of license should your project have?"
+
         },
         {
         type: "input",
         name: "command",
         message: "What command should I run to install all dependencies?"
         },
+];
 
-  ]);
+
+
+const writeFileAsync = util.promisify(fs.writeFile);
+
+function promptUser() {
+  return inquirer.prompt(questions);
 }
-
 
 
 async function init() {
   console.log("hi")
   try {
     const answers = await promptUser();
+    console.log(answers);
+    const text = generateMarkdown(answers);
 
-    const html = generateHTML(answers);
+    await writeFileAsync("README.md", text);
 
-    await writeFileAsync("index.html", html);
-
-    console.log("Successfully wrote to index.html");
+    console.log("Successfully wrote to README.md");
   } catch(err) {
     console.log(err);
   }
 }
 
 init();
+
