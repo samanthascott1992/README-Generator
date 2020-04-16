@@ -1,12 +1,30 @@
 function generateMarkdown(data) {
   return `
-# ${data.github}
-# ${data.title}
-# ${data.projectUrl}
-# ${data.description}
-# ${data.use}
-# ${data.FIXME}
-# ${data.command}
+#Project Title
+${data.title}
+
+
+
+##Description
+${data.description}
+
+
+###GitHub Username:
+${data.github}
+# 
+#Project Repo URL
+ ${data.projectUrl}
+
+#Intended Use for Product
+````````
+ ${data.use}
+````````
+
+# 
+${data.FIXME}
+
+#What command do you use to install?
+ ${data.command}
 
 `;
 }
