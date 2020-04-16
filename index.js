@@ -35,36 +35,37 @@ const writeFileAsync = util.promisify(fs.writeFile);
 
 function promptUser() {
   return inquirer.prompt([
-    {
-      type: "input",
-      name: "name",
-      message: "What is your name?"
-    },
-    {
-      type: "input",
-      name: "location",
-      message: "Where are you from?"
-    },
-    {
-      type: "input",
-      name: "hobby",
-      message: "What is your favorite hobby?"
-    },
-    {
-      type: "input",
-      name: "food",
-      message: "What is your favorite food?"
-    },
-    {
-      type: "input",
-      name: "github",
-      message: "Enter your GitHub Username"
-    },
-    {
-      type: "input",
-      name: "linkedin",
-      message: "Enter your LinkedIn URL."
-    }
+        {
+        type: "input",
+        name: "github",
+        message: "Enter your GitHub Username"
+        },
+        {
+        type: "input",
+        name: "project-url",
+        message: "Enter your project URL."
+        },
+        {
+        type: "input",
+        name: "description",
+        message: "Please write a short description of your project."
+        },
+        {
+        type: "input",
+        name: "use",
+        message: "What is the intended usage for this product?"
+        },   
+       {
+        type: "input",
+        name: "FIX ME",
+        message: "What kind of license should your project have?"
+        },
+        {
+        type: "input",
+        name: "command",
+        message: "What command should I run to install all dependencies?"
+        },
+
   ]);
 }
 
